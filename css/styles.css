@@ -1,0 +1,124 @@
+:root {
+  --rojo:        #C41230;
+  --rojo-oscuro: #8B0A22;
+  --dorado:      #C9A84C;
+  --dorado-claro:#E8C96A;
+  --negro:       #111111;
+  --gris-medio:  #555555;
+  --crema:       #FBF7F0;
+  --blanco:      #FFFFFF;
+
+  --fuente-titulo: 'Playfair Display', Georgia, serif;
+  --fuente-cuerpo: 'Raleway', sans-serif;
+}
+/* Reset y base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  background: var(--crema);
+  color: var(--negro);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+/* ── Navbar ── */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255, 251, 245, 0.97);
+  border-bottom: 1px solid rgba(196, 18, 48, 0.12);
+}
+
+.nav-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.logo-cn {
+  font-size: 1.5rem;
+  color: var(--rojo);
+  border-right: 2px solid var(--dorado);
+  padding-right: 0.9rem;
+}
+
+.logo-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-principal {
+  font-family: var(--fuente-titulo);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--negro);
+}
+
+.logo-sub {
+  font-size: 0.68rem;
+  color: var(--gris-medio);
+  letter-spacing: 0.08em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--negro);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--rojo);
+}
+
+.nav-cta {
+  background: var(--rojo);
+  color: var(--blanco) !important;
+  padding: 0.5rem 1.4rem;
+  border-radius: 50px;
+  font-weight: 600 !important;
+}
+
+.nav-cta:hover {
+  background: var(--rojo-oscuro);
+}
