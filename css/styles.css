@@ -39,86 +39,364 @@ a {
   color: inherit;
 }
 
-.container {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-/* ── Navbar ── */
+.container
+/* ══════════════════════════════
+   NAVBAR
+══════════════════════════════ */
 #navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(255, 251, 245, 0.97);
-  border-bottom: 1px solid rgba(196, 18, 48, 0.12);
+  background: var(--blanco);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
 }
 
-.nav-container {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 2rem;
+/* Barra superior pequeña */
+.top-bar {
+  background: #B01020;
+  padding: 0.45rem 0;
+}
+
+.top-bar-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.9rem;
+  padding-right: 2rem;
+}
+
+.top-bar-links a {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: color 0.3s ease;
+}
+
+.top-bar-links a:hover {
+  color: var(--dorado-claro);
+}
+
+.top-bar-divider {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+}
+
+/* Barra del logo */
+.nav-main {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(176, 16, 32, 0.1);
+}
+
+.nav-main .nav-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 72px;
+  padding-left: 2rem;
 }
 
+/* Logo completo */
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1rem;
+  transition: opacity 0.3s ease;
 }
 
+.logo:hover {
+  opacity: 0.85;
+}
+
+/* Imágenes de los logos */
+.logo-imagenes {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-separador {
+  color: rgba(0, 0, 0, 0.15);
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* Línea separadora dorada */
+.logo-linea {
+  display: block;
+  width: 2px;
+  height: 42px;
+  background: linear-gradient(to bottom, transparent, var(--dorado), transparent);
+  margin: 0 0.25rem;
+}
+
+/* Caracteres chinos */
 .logo-cn {
-  font-size: 1.5rem;
-  color: var(--rojo);
-  border-right: 2px solid var(--dorado);
-  padding-right: 0.9rem;
+  font-size: 1.45rem;
+  color: #B01020;
+  letter-spacing: 0.05em;
+  line-height: 1;
 }
 
+/* Texto del instituto */
 .logo-texto {
   display: flex;
   flex-direction: column;
+  gap: 0.15rem;
 }
 
 .logo-principal {
   font-family: var(--fuente-titulo);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--negro);
+  line-height: 1.1;
 }
 
 .logo-sub {
-  font-size: 0.68rem;
+  font-size: 0.67rem;
   color: var(--gris-medio);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
+}
+
+/* Barra del menú */
+.nav-menu-bar {
+  background: #B01020;
+  padding: 0 0;
+}
+
+.nav-menu-bar .nav-container {
+  display: flex;
+  justify-content: flex-end; /* ← menú alineado a la derecha */
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
 }
 
 .nav-links a {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  color: var(--negro);
-  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.9rem 1.15rem;
+  letter-spacing: 0.03em;
+  position: relative;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.25s ease;
+}
+
+/* Línea animada debajo de cada enlace */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 2px;
+  background: var(--dorado-claro);
+  transition: left 0.3s ease, right 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  left: 0.75rem;
+  right: 0.75rem;
 }
 
 .nav-links a:hover {
-  color: var(--rojo);
+  color: var(--dorado-claro);
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
 }
 
+/* Botón Acceder */
 .nav-cta {
-  background: var(--rojo);
-  color: var(--blanco) !important;
-  padding: 0.5rem 1.4rem;
-  border-radius: 50px;
-  font-weight: 600 !important;
+  background: var(--dorado) !important;
+  color: var(--negro) !important;
+  font-weight: 700 !important;
+  padding: 0.9rem 1.75rem !important;
+  transition: background 0.3s ease, color 0.3s ease !important;
 }
 
 .nav-cta:hover {
-  background: var(--rojo-oscuro);
+  background: var(--dorado-claro) !important;
+  color: var(--negro) !important;
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+/* ══════════════════════════════
+   HERO CARRUSEL
+══════════════════════════════ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.carrusel-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Cada slide */
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  display: flex;
+  align-items: center;
+}
+
+.slide.activo {
+  opacity: 1;
+}
+
+/* Capa oscura encima de la foto */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(100, 5, 15, 0.78) 0%,
+    rgba(100, 5, 15, 0.45) 60%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+/* Contenido del slide */
+.slide-contenido {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding: 0 0 0 6rem;
+  animation: slideEntrada 0.8s ease both;
+}
+
+@keyframes slideEntrada {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.slide-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--dorado-claro);
+  margin-bottom: 1rem;
+}
+
+.slide-contenido h1 {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--blanco);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.slide-contenido h1 em {
+  font-style: italic;
+  color: var(--dorado-claro);
+}
+
+.slide-texto {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  max-width: 520px;
+  letter-spacing: 0.03em;
+}
+
+/* Botón del slide */
+.slide-btn {
+  display: inline-block;
+  background: var(--dorado);
+  color: var(--negro);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.9rem 2.25rem;
+  border-radius: 50px;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.slide-btn:hover {
+  background: var(--dorado-claro);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Flechas */
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: var(--blanco);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.carrusel-btn:hover {
+  background: var(--dorado);
+  border-color: var(--dorado);
+  color: var(--negro);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carrusel-btn.prev { left: 2rem; }
+.carrusel-btn.next { right: 2rem; }
+
+/* Puntitos indicadores */
+.carrusel-puntos {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.punto.activo {
+  background: var(--dorado);
+  transform: scale(1.3);
+}
+
+.punto:hover {
+  background: rgba(255,255,255,0.7);
 }

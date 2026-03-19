@@ -12,29 +12,116 @@
 <body>
 
   <header id="navbar">
-  <div class="nav-container">
 
-    <a href="#inicio" class="logo">
-      <span class="logo-cn">孔子学院</span>
-      <div class="logo-texto">
-        <span class="logo-principal">Instituto Confucio</span>
-        <span class="logo-sub">Universidad Mayor de San Simón</span>
+  <!-- Barra superior pequeña -->
+  <div class="top-bar">
+    <div class="nav-container">
+      <div class="top-bar-links">
+        <a href="#faq">Preguntas frecuentes</a>
+        <span class="top-bar-divider">|</span>
+        <a href="#contacto">Contacto</a>
       </div>
-    </a>
+    </div>
+  </div>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#cursos">Cursos</a>
-      <a href="#becas">Becas</a>
-      <a href="#noticias">Noticias</a>
-      <a href="#galeria">Galería</a>
-      <a href="#contacto" class="nav-cta">Inscribirse</a>
-    </nav>
+  <!-- Barra principal con logos -->
+  <div class="nav-main">
+    <div class="nav-container">
+
+      <!-- Todo el logo junto a la izquierda -->
+      <a href="#inicio" class="logo">
+
+        <!-- Logos reales -->
+<div class="logo-imagenes">
+  <img src="images/umsslogo.png" alt="UMSS" class="logo-img"/>
+  <span class="logo-separador">|</span>
+  <img src="images/iclogo.png" alt="Instituto Confucio" class="logo-img"/>
+</div>
+
+        <!-- Separador dorado -->
+        <span class="logo-linea"></span>
+
+        <!-- Texto y caracteres chinos -->
+        <span class="logo-cn">孔子学院</span>
+        <div class="logo-texto">
+          <span class="logo-principal">Instituto Confucio</span>
+          <span class="logo-sub">Universidad Mayor de San Simón</span>
+        </div>
+
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Barra del menú -->
+  <div class="nav-menu-bar">
+    <div class="nav-container">
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#inscribete">Inscríbete</a>
+        <a href="#examenes">Exámenes HSK y HSKK</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#becas">Becas</a>
+        <a href="#acceder" class="nav-cta">Acceder</a>
+      </nav>
+    </div>
+  </div>
+
+</header>
+<!-- HERO CARRUSEL -->
+<section id="inicio" class="hero">
+
+  <!-- Slides -->
+  <div class="carrusel-wrapper">
+
+    <!-- Slide 1 -->
+    <div class="slide activo" style="background-image: url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1400&q=80')">
+      <div class="slide-overlay"></div>
+      <div class="slide-contenido">
+        <p class="slide-eyebrow">Bienvenidos</p>
+        <h1>Bienvenidos al Instituto<br/><em>Confucio UMSS</em></h1>
+        <p class="slide-texto">Somos el puente entre China y Bolivia</p>
+        <a href="#nosotros" class="slide-btn">Conócenos</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1400&q=80')">
+      <div class="slide-overlay"></div>
+      <div class="slide-contenido">
+        <p class="slide-eyebrow">Cursos</p>
+        <h1>Inscríbete a nuestros cursos<br/><em>presenciales o virtuales</em></h1>
+        <p class="slide-texto">Desde 0 hasta tu viaje a China 😊</p>
+        <a href="#inscribete" class="slide-btn">Ver Cursos</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1400&q=80')">
+      <div class="slide-overlay"></div>
+      <div class="slide-contenido">
+        <p class="slide-eyebrow">Becas</p>
+        <h1>Conoce las becas que<br/><em>China tiene para ti</em></h1>
+        <p class="slide-texto">El gobierno chino ofrece becas completas para bolivianos. ¡Tú puedes ser el próximo!</p>
+        <a href="#becas" class="slide-btn">Ver Becas</a>
+      </div>
+    </div>
 
   </div>
-</header>
 
+  <!-- Flechas de navegación -->
+  <button class="carrusel-btn prev" onclick="cambiarSlide(-1)">&#8249;</button>
+  <button class="carrusel-btn next" onclick="cambiarSlide(1)">&#8250;</button>
+
+  <!-- Puntitos indicadores -->
+  <div class="carrusel-puntos">
+    <span class="punto activo" onclick="irASlide(0)"></span>
+    <span class="punto" onclick="irASlide(1)"></span>
+    <span class="punto" onclick="irASlide(2)"></span>
+  </div>
+
+</section>
   <!-- Aquí se conecta el archivo de JavaScript -->
   <script src="js/main.js"></script>
 
