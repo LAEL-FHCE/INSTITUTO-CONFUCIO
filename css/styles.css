@@ -400,3 +400,419 @@ a {
 .punto:hover {
   background: rgba(255,255,255,0.7);
 }
+/* ══════════════════════════════
+   SECCIÓN NOSOTROS
+══════════════════════════════ */
+#nosotros {
+  background: var(--crema);
+  padding: 5rem 0;
+}
+
+/* Intro superior */
+.nosotros-intro {
+  max-width: 1180px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.nosotros-intro-imagen {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  border: 3px solid var(--dorado);
+  aspect-ratio: 4/3;
+}
+
+.nosotros-intro-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.nosotros-intro-imagen:hover img {
+  transform: scale(1.04);
+}
+
+.seccion-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin-bottom: 0.75rem;
+}
+
+.nosotros-intro-texto h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--negro);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.nosotros-intro-texto h2 em {
+  font-style: italic;
+  color: var(--rojo);
+}
+
+.nosotros-intro-texto p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  color: var(--gris-medio);
+  line-height: 1.85;
+}
+
+/* Cuadros */
+.nosotros-cuadros {
+  max-width: 1180px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cuadro {
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  text-align: center;
+  transition: transform 0.6s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.cuadro:hover::before {
+  opacity: 0.72;
+}
+
+/* Línea dorada abajo */
+.cuadro::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 3px;
+  background: linear-gradient(to right, var(--dorado), var(--rojo));
+  transition: left 0.35s ease, right 0.35s ease;
+  z-index: 1;
+}
+
+.cuadro:hover::after {
+  left: 0;
+  right: 0;
+}
+
+.cuadro:hover {
+  transform: perspective(600px) rotateY(8deg) translateY(-6px);
+  box-shadow: 0 16px 40px rgba(196, 18, 48, 0.3);
+}
+
+/* Todo el contenido encima de la capa */
+.cuadro-icono,
+.cuadro h3,
+.cuadro p,
+.cuadro-flecha {
+  position: relative;
+  z-index: 2;
+}
+
+.cuadro-icono {
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(201,168,76,0.5);
+  transition: all 0.35s ease;
+}
+
+.cuadro:hover .cuadro-icono {
+  background: var(--dorado);
+  border-color: var(--dorado);
+  transform: scale(1.1);
+}
+
+.cuadro h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.15rem;
+  color: var(--blanco);
+  margin-bottom: 0.6rem;
+}
+
+.cuadro p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.cuadro-flecha {
+  font-size: 1.2rem;
+  color: var(--dorado-claro);
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.cuadro:hover .cuadro-flecha {
+  transform: translateX(6px);
+}
+
+/* Bloques de contenido */
+.nosotros-contenido {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contenido-bloque {
+  background: var(--blanco);
+  border-left: 4px solid var(--rojo);
+  border-radius: 0 16px 16px 0;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: all 0.35s ease;
+}
+
+.contenido-bloque:hover {
+  box-shadow: 0 8px 30px rgba(196, 18, 48, 0.1);
+  transform: translateX(6px);
+}
+
+.contenido-bloque h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.5rem;
+  color: var(--rojo);
+  margin-bottom: 1rem;
+}
+
+.contenido-bloque p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--gris-medio);
+  line-height: 1.85;
+}
+/* ══════════════════════════════
+   HERO DE PÁGINAS INTERNAS
+══════════════════════════════ */
+.pagina-hero {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.pagina-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pagina-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(100, 5, 15, 0.82) 0%,
+    rgba(100, 5, 15, 0.5) 60%,
+    rgba(0,0,0,0.2) 100%
+  );
+  z-index: 1;
+}
+
+.pagina-hero-contenido {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 6rem;
+  max-width: 700px;
+}
+
+.pagina-hero-contenido h1 {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--blanco);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.pagina-hero-contenido h1 em {
+  font-style: italic;
+  color: var(--dorado-claro);
+}
+
+.pagina-hero-contenido p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+}
+
+.seccion-eyebrow.light {
+  color: var(--dorado-claro);
+}
+
+/* ══════════════════════════════
+   CUADROS NOSOTROS
+══════════════════════════════ */
+.nosotros-cuadros {
+  max-width: 1180px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.cuadro {
+  background: var(--blanco);
+  border-radius: 20px;
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  border: 1px solid rgba(196,18,48,0.08);
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1),
+              box-shadow 0.4s ease;
+}
+
+/* Detalle decorativo esquina superior derecha */
+.cuadro-deco {
+  position: absolute;
+  top: 0; right: 0;
+  width: 80px; height: 80px;
+  background: linear-gradient(225deg, rgba(196,18,48,0.08) 0%, transparent 70%);
+  border-radius: 0 20px 0 80px;
+  transition: all 0.4s ease;
+}
+
+.cuadro:hover .cuadro-deco {
+  width: 120px; height: 120px;
+  background: linear-gradient(225deg, rgba(196,18,48,0.15) 0%, transparent 70%);
+}
+
+/* Línea dorada inferior animada */
+.cuadro::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 3px;
+  background: linear-gradient(to right, var(--dorado), var(--rojo));
+  border-radius: 0 0 20px 20px;
+  transition: left 0.4s ease, right 0.4s ease;
+}
+
+.cuadro:hover::after {
+  left: 0; right: 0;
+}
+
+/* Hover principal */
+.cuadro:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(196,18,48,0.13);
+  border-color: rgba(196,18,48,0.2);
+}
+
+/* Ícono SVG */
+.cuadro-icono {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  background: rgba(196,18,48,0.06);
+  border: 1.5px solid rgba(196,18,48,0.15);
+  color: var(--rojo);
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.cuadro-icono svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.4s ease;
+}
+
+.cuadro:hover .cuadro-icono {
+  background: var(--rojo);
+  border-color: var(--rojo);
+  color: var(--blanco);
+  transform: scale(1.12) rotate(-6deg);
+  box-shadow: 0 8px 20px rgba(196,18,48,0.3);
+}
+
+.cuadro:hover .cuadro-icono svg {
+  transform: scale(1.1);
+}
+
+/* Título */
+.cuadro h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--negro);
+  margin-bottom: 0.65rem;
+  transition: color 0.3s ease;
+}
+
+.cuadro:hover h3 {
+  color: var(--rojo);
+}
+
+/* Texto */
+.cuadro p {
+  font-size: 0.87rem;
+  color: var(--gris-medio);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+/* Flecha */
+.cuadro-flecha {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(196,18,48,0.25);
+  color: var(--rojo);
+  font-size: 1rem;
+  transition: all 0.35s ease;
+  background: transparent;
+}
+
+.cuadro:hover .cuadro-flecha {
+  background: var(--rojo);
+  border-color: var(--rojo);
+  color: var(--blanco);
+  transform: translateX(4px);
+}
