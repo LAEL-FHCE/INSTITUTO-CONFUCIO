@@ -677,12 +677,13 @@ a {
    CUADROS NOSOTROS
 ══════════════════════════════ */
 .nosotros-cuadros {
-  max-width: 1180px;
-  margin: 4rem auto;
-  padding: 0 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 4rem 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
+  background: rgba(176, 16, 32, 0.06);
 }
 
 .cuadro {
