@@ -1091,3 +1091,486 @@ a {
   color: var(--gris-medio);
   line-height: 1.9;
 }
+/* ══════════════════════════════
+   PÁGINA EXÁMENES
+══════════════════════════════ */
+
+/* Hero */
+.examenes-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0px;
+  overflow: hidden;
+}
+
+.examenes-hero-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center left;
+}
+
+.examenes-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(10,5,15,0.92) 0%,
+    rgba(10,5,15,0.75) 50%,
+    rgba(0,0,0,0.1) 100%
+  );
+}
+
+.examenes-hero-contenido {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 4rem 5rem 4rem 2rem;
+  text-align: right;
+}
+
+.examenes-hero-contenido h1 {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: var(--blanco);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.examenes-hero-contenido h1 em {
+  color: var(--rojo);
+  font-style: normal;
+}
+
+.examenes-hero-contenido p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.examenes-hero-sub {
+  color: var(--dorado-claro) !important;
+  font-size: 1rem !important;
+}
+
+/* Tarjetas HSK y HSKK */
+.examenes-tarjetas-wrapper {
+  background: var(--blanco);
+  padding: 4rem 2rem;
+}
+
+.examenes-tarjetas {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.examen-tarjeta {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.examen-tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+.examen-tarjeta-header {
+  padding: 2rem;
+  text-align: center;
+}
+
+.examen-tarjeta.hsk .examen-tarjeta-header {
+  background: linear-gradient(135deg, #1a5276, #2980b9);
+}
+
+.examen-tarjeta.hskk .examen-tarjeta-header {
+  background: linear-gradient(135deg, #1e8449, #27ae60);
+}
+
+.examen-tarjeta-header h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--blanco);
+  letter-spacing: 0.1em;
+}
+
+.examen-subtitulo {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+}
+
+.examen-cn {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 0.4rem;
+  letter-spacing: 0.1em;
+}
+
+.examen-tarjeta-body {
+  padding: 1.75rem 2rem;
+  background: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.examen-fecha-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.fecha-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gris-medio);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.fecha-valor {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--negro);
+  font-weight: 600;
+}
+
+.btn-examen {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--rojo);
+  color: var(--blanco);
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-examen:hover {
+  background: var(--rojo-oscuro);
+  transform: translateY(-2px);
+}
+
+/* Secciones de información */
+.examenes-info {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.info-seccion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.info-seccion.invertida .info-seccion-imagen { order: -1; }
+
+.info-seccion-imagen {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  border: 3px solid rgba(201,168,76,0.3);
+  aspect-ratio: 4/3;
+}
+
+.info-seccion-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.info-seccion-imagen:hover img { transform: scale(1.04); }
+
+.info-seccion-texto h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--negro);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.info-seccion-texto h2 em {
+  font-style: italic;
+  color: var(--rojo);
+}
+
+.info-seccion-texto p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--gris-medio);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.btn-primario {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.85rem 2rem;
+  background: var(--rojo);
+  color: var(--blanco);
+  border-radius: 50px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-primario:hover {
+  background: var(--rojo-oscuro);
+  transform: translateY(-2px);
+}
+
+/* Niveles HSK */
+.niveles-hsk {
+  text-align: center;
+}
+
+.niveles-hsk h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--negro);
+  margin-bottom: 2.5rem;
+}
+
+.niveles-hsk h2 em {
+  font-style: italic;
+  color: var(--rojo);
+}
+
+.niveles-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.nivel-card {
+  background: var(--blanco);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  border-top: 3px solid rgba(196,18,48,0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nivel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(196,18,48,0.15);
+  border-top-color: var(--rojo);
+}
+
+.nivel-card.destacado { border-top-color: var(--dorado); }
+.nivel-card.avanzado  { border-top-color: var(--rojo); }
+
+.nivel-num {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--rojo);
+  line-height: 1;
+}
+
+.nivel-card h4 {
+  font-family: var(--fuente-titulo);
+  font-size: 1rem;
+  color: var(--negro);
+}
+
+.nivel-card p {
+  font-size: 0.78rem;
+  color: var(--gris-medio);
+}
+
+.nivel-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(196,18,48,0.08);
+  color: var(--rojo);
+  padding: 0.25rem 0.6rem;
+  border-radius: 50px;
+}
+
+/* Cómo inscribirse */
+.como-inscribirse h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--negro);
+  margin-bottom: 2.5rem;
+}
+
+.como-inscribirse h2 em {
+  font-style: italic;
+  color: var(--rojo);
+}
+
+.pasos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.paso {
+  background: var(--blanco);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.paso:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(196,18,48,0.12);
+}
+
+.paso-num {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--rojo);
+  color: var(--blanco);
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 4px 14px rgba(196,18,48,0.3);
+}
+
+.paso h4 {
+  font-family: var(--fuente-titulo);
+  font-size: 1rem;
+  color: var(--negro);
+  margin-bottom: 0.6rem;
+}
+
+.paso p {
+  font-size: 0.85rem;
+  color: var(--gris-medio);
+  line-height: 1.7;
+}
+
+/* Noticias de exámenes */
+.examenes-noticias-wrapper {
+  background: var(--crema);
+  padding: 5rem 2rem;
+}
+
+.examenes-noticias-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--negro);
+  margin-bottom: 3rem;
+}
+
+.examenes-noticias-titulo em {
+  font-style: italic;
+  color: var(--rojo);
+}
+
+.examenes-noticias-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.examen-noticia {
+  background: var(--blanco);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.examen-noticia:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.examen-noticia-img {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.examen-noticia-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.examen-noticia:hover .examen-noticia-img img {
+  transform: scale(1.06);
+}
+
+.examen-noticia-tags {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.tag-noticia {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  color: var(--blanco);
+}
+
+.tag-noticia.rojo  { background: var(--rojo); }
+.tag-noticia.dorado { background: var(--dorado-oscuro); }
+
+.examen-noticia h4 {
+  font-family: var(--fuente-titulo);
+  font-size: 0.98rem;
+  color: var(--negro);
+  padding: 1.25rem;
+  line-height: 1.4;
+}
