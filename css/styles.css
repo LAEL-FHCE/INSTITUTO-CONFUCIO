@@ -1574,3 +1574,194 @@ a {
   padding: 1.25rem;
   line-height: 1.4;
 }
+/* ══════════════════════════════
+   DROPDOWN NAVBAR
+══════════════════════════════ */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--blanco);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  min-width: 220px;
+  z-index: 999;
+  overflow: hidden;
+  border-top: 3px solid var(--dorado);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.85rem 1.25rem !important;
+  font-size: 0.85rem !important;
+  color: var(--negro) !important;
+  font-weight: 500 !important;
+  transition: all 0.25s ease !important;
+  background: transparent !important;
+  transform: none !important;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(196,18,48,0.06) !important;
+  color: var(--rojo) !important;
+  padding-left: 1.75rem !important;
+  transform: none !important;
+}
+
+.dropdown-menu a::after {
+  display: none !important;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+  animation: dropdownEntrada 0.25s ease both;
+}
+
+@keyframes dropdownEntrada {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* ══════════════════════════════
+   QUE ES EXAMEN
+══════════════════════════════ */
+.que-es-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.niveles-hsk-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--negro);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.niveles-hsk-titulo em {
+  font-style: italic;
+  color: var(--rojo);
+}
+
+/* Tarjeta 7-8-9 más ancha */
+.nivel-789 {
+  grid-column: span 2;
+  background: linear-gradient(135deg, rgba(196,18,48,0.05), rgba(201,168,76,0.08));
+  border-top: 3px solid var(--rojo) !important;
+}
+
+.nivel-789 .nivel-num {
+  font-size: 1.5rem;
+}
+
+.examenes-noticias-seccion {
+  background: var(--crema);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+}
+/* ══════════════════════════════
+   INSCRIBETE EXAMEN
+══════════════════════════════ */
+.inscribete-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.inscribete-header {
+  text-align: center;
+  max-width: 100%;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg,
+    rgba(176,16,32,0.06) 0%,
+    rgba(201,168,76,0.08) 50%,
+    rgba(176,16,32,0.06) 100%
+  );
+  border-radius: 20px;
+  border: 1px solid rgba(201,168,76,0.15);
+}
+
+.inscribete-header h1 {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--negro);
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.inscribete-header h1 em {
+  font-style: italic;
+  color: var(--rojo);
+}
+
+.inscribete-header p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--gris-medio);
+  line-height: 1.8;
+}
+
+.inscribete-tarjetas {
+  text-align: center;
+}
+
+.inscribete-tarjetas .examenes-tarjetas {
+  margin-top: 2rem;
+}
+/* Botones hero exámenes */
+.examenes-hero-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-hero-examen {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: var(--blanco);
+  color: var(--negro);
+  border-radius: 50px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.btn-hero-examen:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  background: var(--crema);
+}
+
+.btn-hero-examen.dorado {
+  background: var(--dorado);
+  color: var(--negro);
+}
+
+.btn-hero-examen.dorado:hover {
+  background: var(--dorado-claro);
+}
